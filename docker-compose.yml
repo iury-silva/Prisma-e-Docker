@@ -1,0 +1,19 @@
+version: '3'
+
+
+services:
+  db-first-docker:
+    image: postgres:alpine
+    ports:
+      - "5435:5432"
+    container_name: "db-first-docker"
+    restart: always
+    volumes:
+      - ./db-first-docker:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "pguser"
+      POSTGRES_PASSWORD: "pgpassword"
+
+
+volumes:
+  db-first-docker:
